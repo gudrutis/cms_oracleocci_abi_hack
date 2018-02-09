@@ -1,5 +1,5 @@
-ifeq ($(strip $(CC)),)
-CC:=g++
+ifeq ($(strip $(CXX)),)
+CXX:=g++
 endif
 ifeq ($(strip $(CXXFLAGS)),)
 CXXFLAGS:=-Wall -fPIC
@@ -21,9 +21,9 @@ clean:
 	rm -f $(OBJS)
 	rm -f $(LIB) $(IS_CXX11_ABI)
 %.o: %.cc
-	$(CC) -c $(addprefix -I,$(INCLUDE_DIR)) $(CXXFLAGS) $< -o $@
+	$(CXX) -c $(addprefix -I,$(INCLUDE_DIR)) $(CXXFLAGS) $< -o $@
 $(LIB): $(OBJS)
-	$(CC) -shared $(addprefix -L,$(LIB_DIR)) $(LDFLAGS) $(addprefix -l,$(LIBS)) $? -o $@
+	$(CXX) -shared $(addprefix -L,$(LIB_DIR)) $(LDFLAGS) $(addprefix -l,$(LIBS)) $? -o $@
 $(IS_CXX11_ABI): $(IS_CXX11_ABI).cpp
 	g++ -o $@ $<
 
