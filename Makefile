@@ -25,5 +25,5 @@ clean:
 $(LIB): $(OBJS)
 	$(CXX) -shared $(addprefix -L,$(LIB_DIR)) $(LDFLAGS) $(addprefix -l,$(LIBS)) $? -o $@
 $(IS_CXX11_ABI): $(IS_CXX11_ABI).cpp
-	g++ -o $@ $<
+	$(CXX) -o $@ $<
 
