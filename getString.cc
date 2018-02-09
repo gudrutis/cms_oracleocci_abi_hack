@@ -3,12 +3,12 @@
 #include "occi.h"
 using namespace oracle::occi;
 
-const char *getOraStmtString (Statement *obj, int n) 
+const char *getOraString (Statement *obj, int n) 
 {
  return obj->getString(n).c_str();
 }
 
-const char *getOraStmtString (ResultSet *obj, int n) 
+const char *getOraString (ResultSet *obj, int n) 
 {
  return obj->getString(n).c_str();
 }
