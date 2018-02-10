@@ -4,17 +4,17 @@
 
 inline const char* getOraString (oracle::occi::Statement *obj, int n)
 {
-  return obj->getString(n)->c_str();
+  return obj->getString(n).c_str();
 }
 
 inline const char* getOraString (oracle::occi::ResultSet *obj, int n)
 {
-  return obj->getString(n)->c_str();
+  return obj->getString(n).c_str();
 }
 
 inline const char* getOraMessage (oracle::occi::SQLException *obj)
 {
-  return obj->getMessage()->c_str(); 
+  return obj->getMessage().c_str(); 
 }
 
 #endif
