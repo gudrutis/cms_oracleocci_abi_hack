@@ -7,3 +7,4 @@ int _ZNKSs6lengthEv (char **a)
   return strlen (s);
 }
 }
+// PR-1, commit 1
